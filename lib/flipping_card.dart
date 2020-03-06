@@ -19,7 +19,6 @@ typedef CardTapCallback = void Function(CardSide side);
 /// two sides, [CardSide.FrontSide] and [CardSide.BackSide]. When changing from
 /// one side to another, the card shows a 'flip' animation.
 ///
-/// {@tool sample}
 /// The default constructor creates a [FlippingCard] widget, with the front and
 /// back content from [frontChild] and [backChild] respectively.
 ///
@@ -30,7 +29,6 @@ typedef CardTapCallback = void Function(CardSide side);
 ///       side: CardSide.FrontSide,
 ///       onTap => (side) print("Card tapped!))
 /// ```
-/// {@end-tool}
 class FlippingCard extends StatefulWidget {
   FlippingCard(
       {Key key,
@@ -141,11 +139,11 @@ class _FlipCardState extends State<FlippingCard>
           },
           child: _animationController.value <= 0.5
               ? ClipRRect(
-                  borderRadius: BorderRadius.circular(widget.radius),
-                  child: widget.backChild)
+              borderRadius: BorderRadius.circular(widget.radius),
+              child: widget.backChild)
               : ClipRRect(
-                  borderRadius: BorderRadius.circular(widget.radius),
-                  child: widget.frontChild),
+              borderRadius: BorderRadius.circular(widget.radius),
+              child: widget.frontChild),
         ),
       ),
     );
