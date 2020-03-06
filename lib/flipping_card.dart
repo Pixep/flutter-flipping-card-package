@@ -115,8 +115,6 @@ class _FlipCardState extends State<FlippingCard>
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
-      height: 230,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
