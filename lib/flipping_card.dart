@@ -65,8 +65,6 @@ class FlippingCard extends StatefulWidget {
 class _FlipCardState extends State<FlippingCard>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
-  AnimationStatus _animationStatus = AnimationStatus.dismissed;
-
   CardSide _currentSide;
 
   @override
@@ -88,6 +86,12 @@ class _FlipCardState extends State<FlippingCard>
           _currentSide = CardSide.FrontSide;
         }
       });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
