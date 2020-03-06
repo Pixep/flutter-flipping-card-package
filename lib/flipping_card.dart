@@ -21,15 +21,14 @@ typedef CardTapCallback = void Function(CardSide side);
 ///
 /// {@tool sample}
 /// The default constructor creates a [FlippingCard] widget, with the front and
-/// back content from [frontImage] and [backImage] respectively.
+/// back content from [frontChild] and [backChild] respectively.
 ///
 /// ```dart
 /// FlippingCard(
-///       frontImage: Image.asset("front.jpg"),
-///       backImage: frontImage: Image.asset("back.jpg"),
+///       frontChild: Image.asset("front.jpg"),
+///       backChild: Image.asset("back.jpg"),
 ///       side: CardSide.FrontSide,
-///       onTap => (side) { print("Card tapped!);
-///       })
+///       onTap => (side) print("Card tapped!))
 /// ```
 /// {@end-tool}
 class FlippingCard extends StatefulWidget {
