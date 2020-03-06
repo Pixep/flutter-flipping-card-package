@@ -94,15 +94,17 @@ class _FlipCardState extends State<FlippingCard>
 
   @override
   void didUpdateWidget(FlippingCard oldWidget) {
-    if (widget.side != _currentSide) {
+    if (oldWidget.side != widget.side && widget.side != _currentSide) {
       _flip();
     }
     super.didUpdateWidget(oldWidget);
   }
 
   void _flip() {
-    if (_animationStatus == AnimationStatus.dismissed) {
+    if (_currentSide == CardSide.BackSide) {
       _animationController.forward();
+    } else {
+      _animationController.reverse();
     }
   }
 
