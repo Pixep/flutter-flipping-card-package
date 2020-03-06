@@ -35,16 +35,30 @@ typedef CardTapCallback = void Function(CardSide side);
 class FlippingCard extends StatefulWidget {
   FlippingCard(
       {Key key,
-      this.frontImage,
-      this.backImage,
+      this.frontChild,
+      this.backChild,
       this.radius = 12,
       this.side = CardSide.FrontSide,
       this.onTap})
       : super(key: key);
-  final Image frontImage;
-  final Image backImage;
+
+  /// The widget to be used for the card front side.
+  final Widget frontChild;
+
+  /// The widget to be used for the card back side.
+  final Widget backChild;
+
+  /// The radius applied to the card.
   final double radius;
+
+  /// The side of the card visible. Changing the side once created triggers
+  /// a "flipping" animation.
   final CardSide side;
+
+  /// Called whenever the card is tapped.
+  ///
+  /// This callback is called when the card is tapped, passing the
+  /// current [CardSide] as argument.
   final CardTapCallback onTap;
 
   @override
@@ -125,10 +139,10 @@ class _FlipCardState extends State<FlippingCard>
           child: _animationController.value <= 0.5
               ? ClipRRect(
                   borderRadius: BorderRadius.circular(widget.radius),
-                  child: widget.backImage)
+                  child: widget.backChild)
               : ClipRRect(
                   borderRadius: BorderRadius.circular(widget.radius),
-                  child: widget.frontImage),
+                  child: widget.frontChild),
         ),
       ),
     );
