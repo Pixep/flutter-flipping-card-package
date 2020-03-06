@@ -1,0 +1,15 @@
+name: flipping_card
+description: A package that provides a FlippingCard widget
+version: 0.0.1
+homepage: https://github.com/Pixep/flutter-flipping-card-package
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
