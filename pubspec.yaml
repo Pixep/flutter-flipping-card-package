@@ -1,6 +1,6 @@
 name: flipping_card
 description: A package that provides the FlippingCard widget, a two-sided Card with flipping animations.
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/Pixep/flutter-flipping-card-package
 
 environment:
