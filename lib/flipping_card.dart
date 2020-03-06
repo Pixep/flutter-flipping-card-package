@@ -134,7 +134,11 @@ class _FlipCardState extends State<FlippingCard>
               ? pi * _animationController.value
               : pi + pi * _animationController.value),
         child: GestureDetector(
-          onTap: () => widget.onTap(_currentSide),
+          onTap: () {
+            if (widget.onTap != null) {
+              widget.onTap(_currentSide);
+            }
+          },
           child: _animationController.value <= 0.5
               ? ClipRRect(
                   borderRadius: BorderRadius.circular(widget.radius),
